@@ -1,0 +1,9 @@
+.noline {
+  color: #1c6e8c;
+  font-weight: bold;
+  text-decoration: none !important;
+}
+
+#showcase {
+  height: 90vh;
+}
