@@ -4,22 +4,31 @@ document.getElementById('get-activity').addEventListener('click', getActivity);
 document.addEventListener('click', rickRoll);
 
 function getActivity(e) {
+  // e.preventDefault();
+
+  // const xhr = new XMLHttpRequest();
+
+  // xhr.open('GET', 'https://www.boredapi.com/api/activity', true);
+
+  // xhr.onload = function () {
+  //   if (this.status === 200) {
+  //     const response = JSON.parse(this.responseText);
+
+  //     const output = document.getElementById('output');
+  //     output.textContent = response.activity;
+  //   }
+  // };
+
+  // xhr.send();
+
   e.preventDefault();
 
-  const xhr = new XMLHttpRequest();
-
-  xhr.open('GET', 'https://www.boredapi.com/api/activity', true);
-
-  xhr.onload = function () {
-    if (this.status === 200) {
-      const response = JSON.parse(this.responseText);
-
-      const output = document.getElementById('output');
-      output.textContent = response.activity;
-    }
-  };
-
-  xhr.send();
+  fetch('https://www.boredapi.com/api/activi').then((res) =>
+    res.json().then(function (data) {
+      let output = data.activity;
+      document.getElementById('output').textContent = output;
+    })
+  );
 }
 
 function rickRoll(e) {
