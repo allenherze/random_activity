@@ -23,7 +23,7 @@ function getActivity(e) {
 
   e.preventDefault();
 
-  fetch('https://www.boredapi.com/api/activi').then((res) =>
+  fetch('https://www.boredapi.com/api/activity').then((res) =>
     res.json().then(function (data) {
       let output = data.activity;
       document.getElementById('output').textContent = output;
